@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <main class="container text-center">
-  <h2>Welcome to CPE500 dashboard</h2>
+  <h1>Welcome to CPE500 online board</h1>
   <h3 class="text-danger">Important Updates</h3>
 
   <div class="py-3">
@@ -35,15 +35,28 @@
           <a href="{{ material.material.url }}">{{ material.material.name }}</a>
         </div>
         {% endif %} {% empty %}
-        <p class="text-info">No material uploaded yet</p>
-        {% endfor %}
+        <p class="text-warning">No material uploaded yet</p>
+        {% endfor %} {% if not course.material.exists %}
+        <p class="text-warning">No material uploaded yet</p>
+        {% endif %}
       </div>
+      {% empty %}
+      <p class="text-warning">No course yet</p>
     </div>
     {% endfor %}
     <div class="py-4">
       <h5 class="py-3">Semester: {{ current_semester }}</h5>
       <img src="{{ current_semester_time_table.url }}" alt="course" />
     </div>
+    <p>
+      This project is built and maintained by Efosa Jeffrey Okooboh.
+      <a style="text-decoration: none" href=""
+        >If this project helps you, buy me a drink!</a
+      >
+    </p>
   </div>
+  <p class="pt-3 text-center">&copy; 2021 - CPE500</p>
 </main>
+<main></main>
+
 {% endblock content %}

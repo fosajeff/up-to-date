@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Notification, Course, Semester, Material
+from .models import Update, Course, Semester, Material
 
 
 def dashboard(request):
-    updates = Notification.objects.filter(
+    updates = Update.objects.filter(
         is_active=True).order_by('-date_added')
     courses = Course.objects.all()
     semester = Semester.objects.all()
