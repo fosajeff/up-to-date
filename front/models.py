@@ -9,13 +9,19 @@ SEMESTER_CHOICES = (
 class Semester(models.Model):
     current_semester = models.CharField(
         max_length=3, choices=SEMESTER_CHOICES, default=1)
-    current_semester_time_table = models.ImageField()
+    current_semester_time_table = models.ImageField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'Semester'
 
     def __str__(self):
         return "1st Semester" if int(self.current_semester) == 1 else "2nd Semester"
+
+    @property
+    def get_image_url(self):
+        if self.current_semester_time_table:
+            return self.current_semester_time_table.url
+        return '#'
 
 
 class Update(models.Model):
