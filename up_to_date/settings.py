@@ -138,8 +138,8 @@ STATICFILES_DIRS = (
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'howtknwcz',
-    'API_KEY': '947589189312976',
-    'API_SECRET': 'zXtL1GdSd0DfFFZe0bO_FAglqD8',
+    'API_KEY': os.environ.get('API_KEY', ''),
+    'API_SECRET': os.environ.get('API_SECRET', ''),
 }
 
 MEDIA_URL = '/media/'
