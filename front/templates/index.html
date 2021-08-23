@@ -6,6 +6,8 @@
   <div class="py-3">
     {% for update in updates %}
     <p class="text-danger">{{ update.message }}</p>
+    {% empty %}
+    <p class="text-warning">No update for now</p>
     <p>{% endfor %}</p>
   </div>
 
