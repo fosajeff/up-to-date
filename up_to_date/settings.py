@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 import dj_database_url
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,11 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-
-    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
-    'front'
+
+    'front',
+    'cloudinary_storage',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -136,8 +136,15 @@ STATICFILES_DIRS = (
     Path.joinpath(BASE_DIR, 'static'),
 )
 
-MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'howtknwcz',
+    'API_KEY': '947589189312976',
+    'API_SECRET': 'zXtL1GdSd0DfFFZe0bO_FAglqD8',
+}
+
 MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # Default primary key field type
@@ -148,10 +155,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Heroku: Update database configuration from $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'howtknwcz',
-    'API_KEY': '947589189312976',
-    'API_SECRET': 'zXtL1GdSd0DfFFZe0bO_FAglqD8',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
