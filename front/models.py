@@ -34,7 +34,7 @@ class Update(models.Model):
 
 
 class Course(models.Model):
-    course_code = models.CharField(max_length=30)
+    course_name = models.CharField(max_length=60)
 
     def __str__(self):
         return self.course_code
