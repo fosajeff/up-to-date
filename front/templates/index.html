@@ -6,14 +6,14 @@
   <h1>Welcome to CPE500Level online board</h1>
   <h3 class="text-danger">Important Updates</h3>
 
-  <div class="py-2">
+  <ul class="list-group py-2">
     {% for update in updates %}
-    <p class="text-danger">{{ update.message }}</p>
+    <li class="text-danger list-group-item">{{ update.message }}</li>
     {% empty %}
-    <p class="text-warning">No update for now</p>
-    <p>{% endfor %}</p>
-    <p class="text-danger">Need the list of courses (compulsory and elective), <a class="text-decoration-none" download href="{% static "500-level-Course-List.pdf" %}">click here</a></p>
-    <p class="text-danger">See Lecture Timetable below!</p>
+    <li class="text-warning list-group-item">No update for now</li>
+    {% endfor %}
+    <li class="text-danger list-group-item">Need the list of courses (compulsory and elective), <a class="text-decoration-none" download href="{% static "500-level-Course-List.pdf" %}">click here</a></li>
+    <li class="text-danger list-group-item">See Lecture Timetable below!</li>
   </div>
 
   <div class="accordion accordion-flush" id="accordionFlushExample">
