@@ -144,7 +144,7 @@ CLOUDINARY_STORAGE = {
 
 MEDIA_URL = '/'
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 
 
 # Default primary key field type

@@ -1,14 +1,18 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
 <main class="container text-center">
-  <h1>Welcome to CPE500 online board</h1>
+  <h1>Welcome to CPE500Level online board</h1>
   <h3 class="text-danger">Important Updates</h3>
 
-  <div class="py-3">
+  <div class="py-2">
     {% for update in updates %}
     <p class="text-danger">{{ update.message }}</p>
     {% empty %}
     <p class="text-warning">No update for now</p>
     <p>{% endfor %}</p>
+    <p class="text-danger">Need the list of courses (compulsory and elective), <a class="text-decoration-none" download href="{% static "500-level-Course-List.pdf" %}">click here</a></p>
   </div>
 
   <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -17,13 +21,14 @@
       <h2 class="accordion-header" id="flush-headingOne">
         <button
           class="accordion-button collapsed d-block text-center"
+          style="color:#0d6efd"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#flush-collapseOne{{ forloop.counter }}"
           aria-expanded="false"
           aria-controls="flush-collapseOne{{ forloop.counter }}"
         >
-          {{ course.course_code }}
+          {{ course.course_name }}
         </button>
       </h2>
       <div
@@ -47,7 +52,7 @@
     </div>
     {% endfor %}
     <div class="py-4">
-      <h5 class="py-3">Semester: {{ current_semester }}</h5>
+      <h5 class="py-3">{{ current_semester }}</h5>
       <img src="{{ current_semester_time_table }}" alt="course" />
     </div>
     <p>

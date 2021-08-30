@@ -37,7 +37,7 @@ class Course(models.Model):
     course_name = models.CharField(max_length=60)
 
     def __str__(self):
-        return self.course_code
+        return self.course_name
 
 
 class Material(models.Model):
@@ -46,4 +46,4 @@ class Material(models.Model):
         Course, on_delete=models.SET_NULL, null=True, related_name="material")
 
     def __str__(self):
-        return self.course.course_code if self.course else "---"
+        return self.course.course_name if self.course else "---"

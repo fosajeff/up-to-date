@@ -17,8 +17,8 @@ def dashboard(request):
 
     if semester.exists():
         semester = semester[0]
-        current_semester = "1st Semester" if int(
-            semester.current_semester) == 1 else "2nd Semester"
+        current_semester = "1st Semester Time-table" if int(
+            semester.current_semester) == 1 else "2nd Semester Time-table"
         current_semester_time_table = semester.get_image_url
         context.update({'current_semester': current_semester,
                         'current_semester_time_table': current_semester_time_table, })
