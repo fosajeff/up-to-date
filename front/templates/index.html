@@ -13,6 +13,7 @@
     <p class="text-warning">No update for now</p>
     <p>{% endfor %}</p>
     <p class="text-danger">Need the list of courses (compulsory and elective), <a class="text-decoration-none" download href="{% static "500-level-Course-List.pdf" %}">click here</a></p>
+    <p class="text-danger">See Lecture Timetable below!</p>
   </div>
 
   <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -53,7 +54,7 @@
     {% endfor %}
     <div class="py-4">
       <h5 class="py-3">{{ current_semester }}</h5>
-      <img src="{{ current_semester_time_table }}" alt="course" />
+      <img src="{{ current_semester_time_table }}" alt="time-table" />
     </div>
     <p>
       This project is built and maintained by Efosa Jeffrey Okooboh.
