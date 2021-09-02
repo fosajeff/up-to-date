@@ -40,7 +40,7 @@
       >
         {% for material in materials %} {% if material.course == course %}
         <div class="py-1">
-          <a href="{{ material.material.url }}">{{ material.material.name }}</a>
+          <a download href="{{ material.material.url }}">{{ material.material.name }}</a>
         </div>
         {% endif %} {% empty %}
         <p class="text-warning">No material uploaded yet</p>
