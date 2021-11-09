@@ -13,10 +13,51 @@
       crossorigin="anonymous"
     />
     <link rel="icon" type="image/jpg" href="{% static '/img/favicon.jpg' %}" />
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
 
     <title>CPE - 500 | Home</title>
   </head>
   <body>
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <div class="ticker__item">
+          If this project helps you,
+          <a
+            style="text-decoration: none"
+            target="_blank"
+            href="https://flutterwave.com/pay/digixtechsolutionsw7ieukb0xm1b"
+            >buy me a drink!</a
+          >
+        </div>
+        <div class="ticker__item">
+          If this project helps you,
+          <a
+            style="text-decoration: none"
+            target="_blank"
+            href="https://flutterwave.com/pay/digixtechsolutionsw7ieukb0xm1b"
+            >buy me a drink!</a
+          >
+        </div>
+        <div class="ticker__item">
+          If this project helps you,
+          <a
+            style="text-decoration: none"
+            target="_blank"
+            href="https://flutterwave.com/pay/digixtechsolutionsw7ieukb0xm1b"
+            >buy me a drink!</a
+          >
+        </div>
+        <div class="ticker__item">
+          If this project helps you,
+          <a
+            style="text-decoration: none"
+            target="_blank"
+            href="https://flutterwave.com/pay/digixtechsolutionsw7ieukb0xm1b"
+            >buy me a drink!</a
+          >
+        </div>
+      </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="#">CPE500</a>
@@ -42,6 +83,12 @@
       gtag("js", new Date());
 
       gtag("config", "G-GFZ13NE4H1");
+    </script>
+
+    <script>
+      setTimeout(() => {
+        document.querySelector(".ticker-wrap").style.display = "none";
+      }, 60000);
     </script>
   </body>
 </html>

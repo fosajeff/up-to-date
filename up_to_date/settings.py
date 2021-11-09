@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get(
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ["cpe500level.herokuapp.com"]
+ALLOWED_HOSTS = ["cpe500level.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
