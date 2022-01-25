@@ -35,6 +35,8 @@ class Update(models.Model):
 
 class Course(models.Model):
     course_name = models.CharField(max_length=60)
+    semester = models.CharField(
+        max_length=3, choices=SEMESTER_CHOICES, default=2)
 
     def __str__(self):
         return self.course_name
@@ -44,6 +46,8 @@ class Material(models.Model):
     material = models.FileField()
     course = models.ForeignKey(
         Course, on_delete=models.SET_NULL, null=True, related_name="material")
+    semester = models.CharField(
+        max_length=3, choices=SEMESTER_CHOICES, default=2)
 
     def __str__(self):
         return self.course.course_name if self.course else "---"
