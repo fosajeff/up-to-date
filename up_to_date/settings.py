@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'front',
-    'cloudinary_storage',
-    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -136,15 +134,16 @@ STATICFILES_DIRS = (
     Path.joinpath(BASE_DIR, 'static'),
 )
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'howtknwcz',
-    'API_KEY': os.environ.get('API_KEY', ''),
-    'API_SECRET': os.environ.get('API_SECRET', ''),
-}
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID", '')
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get("AWS_S3_SECRET_ACCESS_KEY", '')
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", '')
+AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME", '')
+AWS_DEFAULT_ACL = "public-read"
 
 MEDIA_URL = '/'
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 
 
 # Default primary key field type
