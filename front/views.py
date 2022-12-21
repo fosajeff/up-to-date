@@ -5,9 +5,9 @@ from .models import Update, Course, Semester, Material
 def dashboard(request):
     updates = Update.objects.filter(
         is_active=True).order_by('-date_added')
-    courses = Course.objects.filter(semester=2)
+    courses = Course.objects.filter(semester=1)
     semester = Semester.objects.all()
-    materials = Material.objects.filter(semester=2)
+    materials = Material.objects.filter(semester=1)
 
     context = {
         'updates': updates,
